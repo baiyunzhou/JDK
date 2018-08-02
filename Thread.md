@@ -84,4 +84,33 @@ public class Thread implements Runnable {
         init(null, target, "Thread-" + nextThreadNum(), 0, acc, false);
     }
 ```
-## 在启动的线程中执行
+## 在启动的线程中执行代码
+
+### 使用带Runnable参数的构造方法
+
+```java
+package com.zby.thread;
+
+public class ThreadMain {
+
+	public static void main(String[] args) {
+
+		System.out.println(Thread.currentThread().getName());
+
+		Thread thread = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				System.out.println(Thread.currentThread().getName());
+			}
+		});
+		thread.start();
+	}
+
+}
+```
+输出：
+``` console
+main
+Thread-0
+```
+构造Thread实例的时候传入一个Runnable实例，
