@@ -219,3 +219,11 @@ SELECT DISTINCT CONCAT('User: ''',user,'''@''',host,''';') AS query FROM mysql.u
 ```shell
 SHOW VARIABLES LIKE 'character_set_%';
 ```
+### 设置编码
+
+/etc/my.cnf添加：
+[client]
+
+default-character-set=UTF8
+在[mysqld]里面添加：
+character-set-server=UTF8
