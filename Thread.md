@@ -399,6 +399,8 @@ public class ThreadMain {
 ```
 - 是给虚拟机用的，不能拿来做同步控制
 - 只能获取转换后的状态
+
+自定义线程状态转换示例：
 ```java
 package com.zby.thread;
 
@@ -488,6 +490,7 @@ public class ThreadMain {
 	}
 }
 ```
+输出：
 ```console
 1-新建自定义线程状态：NEW
 2-自定义线程启动状态：RUNNABLE
@@ -498,8 +501,22 @@ public class ThreadMain {
 7-自定义线程定时阻塞状态：TIMED_WAITING
 8-自定义线程定时阻塞后状态：RUNNABLE
 9-自定义线程执行完成后状态：TERMINATED
-
 ```
+状态转换详情：
+
+NEW：新建
+RUNNABLE：调用线程对象的start方法
+BLOCKED：等待获取synchronized锁
+WAITING：Object.wait with no timeout ；Thread.join with no timeout ；LockSupport.park 
+TIMED_WAITING：Thread.sleep ；Object.wait with timeout ；Thread.join with timeout ；LockSupport.parkNanos ；LockSupport.parkUntil 
+TERMINATED：线程执行完成
+
+### 7.5group
+
+
+
+
+
 ```java
 
 ```
