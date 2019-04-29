@@ -408,7 +408,7 @@ class RunnableAdapter<T> implements Callable<T> {
 
 - Runnable接口可以完美转换为Callable
 
-## JDK中FutureTask
+## JDK中FutureTask完整实现异步封装
 
 ```java
 package java.util.concurrent;
@@ -844,7 +844,7 @@ public class FutureTask<V> implements RunnableFuture<V> {
 - 使用链表对阻塞线程进行排队
 - 提供通用的异步任务封装
 
-## 执行有返回值的任务
+## 再次执行有返回值的任务
 
 ```java
     public static void main(String[] args) throws Exception {
